@@ -1,0 +1,31 @@
+name: Matrix Configuration
+
+
+on: 
+ 
+ 
+ push:
+
+jobs:
+    build:
+      strategy:
+        matrix:
+          os: [ubuntu-latest, macos-12, windows-latest]
+
+      runs-on: ${{matrix.os}}
+      steps:
+              
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.7
+      
+      - name: checking python version
+        run: py-version
+        
+  
+
+           
+
+    
+
